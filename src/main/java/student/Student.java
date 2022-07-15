@@ -1,20 +1,30 @@
 package student;
 
-import course.Course;
-
 import java.util.ArrayList;
 
- class Student {
+
+
+public class Student {
 
     static String name;
     static String lastname;
     static String sex;
     static int facultyNumber;
     static String studentID;
-    static ArrayList<Course> list = new ArrayList<Course>();
+    static ArrayList<String> courseList = new ArrayList<String>();
+
+   public Student(String name, String lastname, String sex, int facultyNumber, String studentID, ArrayList courseList) {
+      this.name = name;
+      this.lastname = lastname;
+      this.sex = sex;
+      this.facultyNumber = facultyNumber;
+      this.studentID = studentID;
+      this.courseList = courseList;
+   }
 
 
-    public static String getName() {
+
+   public static String getName() {
        return name+lastname+facultyNumber;
     }
 
@@ -34,11 +44,13 @@ import java.util.ArrayList;
        return studentID;
     }
 
-    public static ArrayList<Course> getList() {
-       return list;
+    public static ArrayList<String> getList() {
+       return courseList;
     }
 
     public static String getStudent(){
-       return name + " " + lastname + " " + sex + " " + facultyNumber + studentID + list;
+       return name + " " + lastname + " " + sex + " " + facultyNumber + " " + studentID + courseList;
     }
- }
+
+
+}
