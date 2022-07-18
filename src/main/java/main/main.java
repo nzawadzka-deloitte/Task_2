@@ -5,6 +5,7 @@ import student.Student;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class main {
     public static void main(String[] args) {
@@ -19,6 +20,8 @@ public class main {
     List<String> student2Course = new ArrayList<>(List.of("Analiza"));
     Student student1 = new Student ("Natalia", "Zawadzka","F",4, "252706", (ArrayList) student1Course);
     Student student2 = new Student ("Anna", "Nowak", "F", 2, "232893", (ArrayList) student2Course);
+
+
 
 
 
