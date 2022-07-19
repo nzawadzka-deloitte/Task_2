@@ -7,6 +7,7 @@ import student.Student;
 import student.StudentData;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -35,5 +36,21 @@ public class main {
                 .map(student -> student.getFaculty().getFacultyNumber())
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
+
+        //max
+        Student maxCourses = students.stream()
+                .max(Comparator.comparing(student -> student.getCourses().get(0).getNumberOfStudents()))
+                .get();
+        System.out.println("Number of students: "+maxCourses.getCourses().get(0).getNumberOfStudents());
+
+        //GroupingBy
+        var gruopBySex = students.stream()
+                .collect(Collectors.groupingBy(Student::getSex, Collectors.mapping(Student::getStudentID,Collectors.toList())));
+        System.out.println(gruopBySex);
+
+
+
     }
+
+
 }

@@ -4,6 +4,13 @@ public class Course {
      String name;
      String ect;
     int courseID;
+
+    int numberOfStudents;
+
+    public int getNumberOfStudents() {
+        return numberOfStudents;
+    }
+
     public String getName() {
         return name;
     }
