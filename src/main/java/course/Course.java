@@ -1,30 +1,33 @@
 package course;
 
 public class Course {
-    static String name;
-    static int ec;
+     String name;
+     String ect;
+    int courseID;
+    public String getName() {
+        return name;
+    }
 
-    static int courseID;
-
+    public String getEct() {
+        return ect;
+    }
+    public int getCourseID() {
+        return courseID;
+    }
 
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setEc(int ec) {
-        this.ec = ec;
+    public void setEc(String ect) {
+        this.ect = ect;
     }
 
-    public Course(String name, int ec, int courseID) {
+    public Course(String name, String ect, int courseID) {
         this.name = name;
-        this.ec = ec;
+        this.ect = ect;
         this.courseID = courseID;
     }
-    public static String getKurs(){
-        return name + ec;
-
-    }
-
 
 }

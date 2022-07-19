@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class Student {
 
-    static String name;
-    static String lastname;
-    static String sex;
-    static int facultyNumber;
-    static String studentID;
-    static ArrayList<String> courseList = new ArrayList<String>();
+     String name;
+     String lastname;
+     String sex;
+     int facultyNumber;
+     String studentID;
+     ArrayList<String> courseList = new ArrayList<String>();
 
    public Student(String name, String lastname, String sex, int facultyNumber, String studentID, ArrayList courseList) {
       this.name = name;
@@ -24,7 +24,7 @@ public class Student {
 
 
 
-   public static String getName() {
+   public  String getName() {
        return name+lastname+facultyNumber;
     }
 
@@ -44,11 +44,11 @@ public class Student {
        return studentID;
     }
 
-    public static ArrayList<String> getList() {
+    public  ArrayList<String> getList() {
        return courseList;
     }
 
-    public static String getStudent(){
+    public  String getStudent(){
        return name + " " + lastname + " " + sex + " " + facultyNumber + " " + studentID + courseList;
     }
 
