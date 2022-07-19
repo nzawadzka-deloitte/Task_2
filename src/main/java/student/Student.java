@@ -1,32 +1,32 @@
 package student;
 
-import java.util.ArrayList;
+import course.Course;
+import faculty.Faculty;
 
+import java.util.List;
 
 
 public class Student {
 
-    static String name;
-    static String lastname;
-    static String sex;
-    static int facultyNumber;
-    static String studentID;
-    static ArrayList<String> courseList = new ArrayList<String>();
+     String name;
+     String lastname;
+     String sex;
+     Faculty faculty;
+     String studentID;
+     Course course;
 
-   public Student(String name, String lastname, String sex, int facultyNumber, String studentID, ArrayList courseList) {
+   public Student(String name, String lastname, String sex, Faculty faculty, String studentID, Course course) {
       this.name = name;
       this.lastname = lastname;
       this.sex = sex;
-      this.facultyNumber = facultyNumber;
+      this.faculty = faculty;
       this.studentID = studentID;
-      this.courseList = courseList;
+      this.course = course;
    }
 
 
 
-   public static String getName() {
-       return name+lastname+facultyNumber;
-    }
+
 
     public String getLastname() {
        return lastname;
@@ -36,21 +36,46 @@ public class Student {
        return sex;
     }
 
-    public int getFacultyNumber() {
-       return facultyNumber;
+    public Faculty getFaculty() {
+       return faculty;
     }
 
+    public String getFacultyName(){
+       return faculty.getFacultyName();
+    }
     public String getStudentID() {
        return studentID;
     }
 
-    public static ArrayList<String> getList() {
-       return courseList;
+    public Course getCourse() {
+       return course;
+    }
+    public String getCourseName(){
+       return course.getName();
     }
 
-    public static String getStudent(){
-       return name + " " + lastname + " " + sex + " " + facultyNumber + " " + studentID + courseList;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public void setCourses(Course course) {
+        this.course = course;
+    }
 }
