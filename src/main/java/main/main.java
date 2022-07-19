@@ -3,6 +3,7 @@ import course.Course;
 import course.CourseData;
 import course.FacultyData;
 import faculty.Faculty;
+import org.w3c.dom.ls.LSOutput;
 import student.Student;
 import student.StudentData;
 
@@ -33,22 +34,27 @@ public class main {
 
     //Map
         students.stream()
-                .map(student -> student.getFaculty().getFacultyNumber())
+                .map(student -> student.getFaculty().getFacultyName())
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
         //max
         Student maxCourses = students.stream()
-                .max(Comparator.comparing(student -> student.getCourses().get(0).getNumberOfStudents()))
+                .max(Comparator.comparing(student -> student.getCourse().getNumberOfStudents()))
                 .get();
-        System.out.println("Number of students: "+maxCourses.getCourses().get(0).getNumberOfStudents());
+        System.out.println("Number of students: "+maxCourses.getCourse().getNumberOfStudents() + " " +
+                maxCourses.getCourseName());
 
         //GroupingBy
-        var gruopBySex = students.stream()
-                .collect(Collectors.groupingBy(Student::getSex, Collectors.mapping(Student::getStudentID,Collectors.toList())));
-        System.out.println(gruopBySex);
+        var gruopByLastName = students.stream()
+                .collect(Collectors.groupingBy(Student::getFacultyName, Collectors.mapping(Student::getStudentID,Collectors.toList())));
+                System.out.println(gruopByLastName);
 
-
+                double averageEct = courses.stream()
+                        .mapToInt(Course::getNumberOfStudents)
+                        .average()
+                        .getAsDouble();
+        System.out.println(averageEct);
 
     }
 

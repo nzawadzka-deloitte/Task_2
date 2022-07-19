@@ -11,4 +11,5 @@ public class CourseData {
         List<Course> courses = new ArrayList<>(List.of(course1, course2, course3));
         return courses;
     }
+
 }

@@ -1,13 +1,25 @@
 package course;
 
+import student.Student;
+import student.StudentData;
+
+import java.util.List;
 public class Course {
+
      String name;
      String ect;
-    int courseID;
+     int courseID;
+     int numberOfStudents;
 
-    int numberOfStudents;
 
     public int getNumberOfStudents() {
+        numberOfStudents=0;
+        List<Student> students = StudentData.createData();
+        for(int i=0; i<students.size(); i++){
+            if(students.get(i).getCourseName().equals(name)){
+                numberOfStudents++;
+            }
+        }
         return numberOfStudents;
     }
 
@@ -35,6 +47,7 @@ public class Course {
         this.name = name;
         this.ect = ect;
         this.courseID = courseID;
+
     }
 
 }
